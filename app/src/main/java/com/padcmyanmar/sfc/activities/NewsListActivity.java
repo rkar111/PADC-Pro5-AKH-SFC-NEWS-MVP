@@ -85,9 +85,9 @@ public class NewsListActivity extends BaseActivity
 
         rvNews.setEmptyView(vpEmptyNews);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        //mNewsAdapter = new NewsAdapter(getApplicationContext(), mNewsPresenter);
-        mNewNewsAdapter = new NewNewsAdapter(getApplicationContext(), mNewsPresenter);
-        rvNews.setAdapter(mNewNewsAdapter);
+        mNewsAdapter = new NewsAdapter(getApplicationContext(), mNewsPresenter);
+        //mNewNewsAdapter = new NewNewsAdapter(getApplicationContext(), mNewsPresenter);
+        rvNews.setAdapter(mNewsAdapter);
 
         mSmartScrollListener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
             @Override
@@ -157,7 +157,7 @@ public class NewsListActivity extends BaseActivity
 
     @Override
     public void displayNewsList(List<NewsVO> newsList) {
-        mNewNewsAdapter.appendNewData(newsList);
+        mNewsAdapter.appendNewData(newsList);
     }
 
     @Override

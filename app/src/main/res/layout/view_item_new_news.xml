@@ -30,7 +30,6 @@
         android:id="@+id/tv_news_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@id/iv_news_image"
         android:layout_below="@id/iv_news_image"
         android:layout_margin="@dimen/margin_medium"
         android:text="1"
