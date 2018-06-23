@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.padcmyanmar.sfc.R;
 import com.padcmyanmar.sfc.SFCNewsApp;
+import com.padcmyanmar.sfc.adapters.NewNewsAdapter;
 import com.padcmyanmar.sfc.adapters.NewsAdapter;
 import com.padcmyanmar.sfc.components.EmptyViewPod;
 import com.padcmyanmar.sfc.components.SmartRecyclerView;
@@ -47,6 +48,7 @@ public class NewsListActivity extends BaseActivity
     private NewsListPresenter mNewsPresenter;
 
     private NewsAdapter mNewsAdapter;
+    private NewNewsAdapter mNewNewsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +85,9 @@ public class NewsListActivity extends BaseActivity
 
         rvNews.setEmptyView(vpEmptyNews);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        mNewsAdapter = new NewsAdapter(getApplicationContext(), mNewsPresenter);
-        rvNews.setAdapter(mNewsAdapter);
+        //mNewsAdapter = new NewsAdapter(getApplicationContext(), mNewsPresenter);
+        mNewNewsAdapter = new NewNewsAdapter(getApplicationContext(), mNewsPresenter);
+        rvNews.setAdapter(mNewNewsAdapter);
 
         mSmartScrollListener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
             @Override
@@ -154,7 +157,7 @@ public class NewsListActivity extends BaseActivity
 
     @Override
     public void displayNewsList(List<NewsVO> newsList) {
-        mNewsAdapter.appendNewData(newsList);
+        mNewNewsAdapter.appendNewData(newsList);
     }
 
     @Override

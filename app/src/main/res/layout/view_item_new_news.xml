@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_new_news"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_news_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/img_news_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_news_publisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_news_id"
+        android:layout_below="@id/iv_news_image"
+        android:layout_toEndOf="@id/tv_news_id"
+        android:text="Eleven"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_regular_2x" />
+
+    <TextView
+        android:id="@+id/tv_news_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/iv_news_image"
+        android:layout_below="@id/iv_news_image"
+        android:layout_margin="@dimen/margin_medium"
+        android:text="1"
+        android:textColor="@color/primary" />
+
+    <ImageView
+        android:id="@+id/iv_news_publisher"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@id/tv_news_publisher"
+        android:layout_below="@id/iv_news_image"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_toEndOf="@id/tv_news_publisher"
+        tools:src="@drawable/img_publication_logo_placeholder" />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tv_news_brief"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_news_publisher"
+        android:layout_below="@id/tv_news_id"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.3"
+        android:maxLines="4"
+        android:text="@string/dummy_news"
+        android:textColor="@color/primary_text" />
+
+    <TextView
+        android:id="@+id/tv_news_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_news_publisher"
+        android:layout_below="@id/tv_news_brief"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Posted At : Jan 01 - 6:30AM"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_regular" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@id/tv_news_date"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/divider" />
+
+</RelativeLayout>
